@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Combining CSS Selectors</title>
+  <link rel="stylesheet" href="./style.css">
+
+
+  <!-- CSS -->
+  <style>
+ 
+    #div1 {
+      width: 350px;
+      height: 70px;
+      padding: 10px;
+      border: 1px solid #aaaaaa;
+    }
+    </style>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+    
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+
+
+    
+    </script>
+
+</head>
+
+<!-- Don't change any of the HTML code! -->
+
+
+<body style="background-color: cadetblue; margin: 2%;" >
+
+
+
+  <p>Drag the text into the rectangle:</p>
+  
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  <br>
+  <h1 id="drag1"  draggable="true" ondragstart="drag(event)" width="336" height="69">Drag Me To Rectangle</h1>
+<hr>
+
+
+  <h3 id="seecode" draggable="true">Try to Drag Me</h3>
+
+  <button type="button" onclick='document.getElementById("seecode").innerHTML = "H1 id=SEECODE draggable=TRUE</H1>"'>See Code!</button>
+<hr><br>
+
+
+
+  <form action="/action_page.php" id="subm">
+    <label for="img">Select image:</label>
+    <input type="file" id="img" name="img" accept="image/*">
+    <input type="submit">
+  </form>
+  <button type="button" onclick='document.getElementById("subm").innerHTML = "input type=file id=img name=img accept=image"'>See Code!</button><br>
+<br><hr><br>
+
+
+<hr>
+  <form action="/action_page.php" method="get" autocomplete="on">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br><br>
+    <input type="submit">
+  </form>
+<hr>
+
+
+<input type="text" oncopy="myFunction()" value="Try to copy this text">
+
+<p id="copied"></p>
+
+
+<br><hr>
+
+<h2>Select a new car from the list.</h2>
+
+<select id="mySelect" onchange="myFunction()">
+  <option value="Audi">Audi
+  <option value="BMW">BMW
+  <option value="Mercedes">Mercedes
+  <option value="Volvo">Volvo
+</select>
+
+<!--When you select a new car, a function is triggered which outputs the value of the selected car.-->
+
+<p id="select"></p>
+
+<script>
+   function myFunction() {
+    let x = document.getElementById("mySelect").value;
+    document.getElementById("select").innerHTML = "You selected: " + x;
+    }
+
+    function myFunction() {
+    document.getElementById("copied").innerHTML = "You copied text!"
+    }
+</script>
+
+<script>
+  
+</script>
+</body>
+
+</html>
